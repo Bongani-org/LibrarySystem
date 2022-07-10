@@ -1,0 +1,17 @@
+﻿@model Book
+@{
+    ViewData["Title"] = "Confirm";
+}
+
+<div class="text-center">
+
+    <h3>"@Model.BookTitle" was added to your collection!</h3>
+    @if (Model.BookIsRead == true)
+    {
+        @:You have already read this book.
+    }
+    else
+    {
+        @:You still want to read this book.
+    }
+</div>

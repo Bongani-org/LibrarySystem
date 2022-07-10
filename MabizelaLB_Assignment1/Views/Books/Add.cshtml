@@ -1,0 +1,47 @@
+﻿@model Book
+@{ ViewData["Title"] = "Add"; }
+
+<h4>Add a Book</h4>
+
+<form class="p-1" method="post" asp-action="Add">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    @*Title controls*@
+    <div class="form-group">
+        <label asp-for="BookTitle">Title</label>
+        <input asp-for="BookTitle" class="form-control" />
+        @*<span asp-validation-for="BookTitle" class="text-danger"></span>*@
+    </div>
+
+    @*Author controls*@
+    <div class="form-group">
+        <label asp-for="BookAuthor">Author</label>
+        <input asp-for="BookAuthor" class="form-control" />
+        @*<span asp-validation-for="BookAuthor" class="text-danger"></span>*@
+    </div>
+
+    @*ISBN controls*@
+    <div class="form-group">
+        <label asp-for="BookISBN">ISBN</label>
+        <input asp-for="BookISBN" class="form-control" />
+        @*<span asp-validation-for="BookISBN" class="text-danger"></span>*@
+    </div>
+
+    @*IsRead controls*@
+    <div class="form-group">
+        <label asp-for="BookIsRead">Have you read this book?</label>
+        <select asp-for="BookIsRead" class="custom-select">
+            <option value="">Choose an option</option>
+            <option value="true">Yes, I have read this book</option>
+            <option value="false">No, I still want to read this book</option>
+        </select>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary" type="submit" asp-controller="Books" asp-action="Add">
+            Add Book to Collection
+        </button>
+    </div>
+</form>
+
+

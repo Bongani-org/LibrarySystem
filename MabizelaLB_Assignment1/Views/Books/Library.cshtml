@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Book>
+@{
+    ViewData["Title"] = "Library"; 
+}
+
+<h3>Here is the list of all books in your collection that you have already read</h3>
+<table class="table table-sm table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var book in Model)
+            {
+                <tr>
+                    <td>@book.BookTitle</td>
+                    <td>@book.BookAuthor</td>
+                    <td>@book.BookISBN</td>
+                </tr>
+            }
+    </tbody>
+</table>
